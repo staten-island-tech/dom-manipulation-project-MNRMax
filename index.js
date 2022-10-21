@@ -1,14 +1,11 @@
 DOMSelectors = {
     button: document.getElementById("submit"),
     input: document.getElementById("input"),
-    list: document.getElementById("ol")
+    objects: document.getElementById("objects"),
+    remove: document.getElementById('remove')
 }
 
-DOMSelectors.button.addEventListener(click, create);
-
-function create() {
+DOMSelectors.button.addEventListener('click', function() {
     console.log("test")
-    value = DOMSelectors.input.value 
-    li = document.createElement("li")
-    DOMSelectors.ol.append(li)
-}
+    DOMSelectors.objects.insertAdjacentHTML("beforeend", `<p>${DOMSelectors.input.value}</p>`);
+});
