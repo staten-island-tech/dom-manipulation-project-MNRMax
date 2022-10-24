@@ -6,10 +6,11 @@ DOMSelectors = {
 }
 
 DOMSelectors.button.addEventListener('click', function() {
-    DOMSelectors.objects.insertAdjacentHTML("beforeend", `<p>${DOMSelectors.input.value}</p>\n`);
+    DOMSelectors.objects.insertAdjacentHTML("afterbegin", `<p>${DOMSelectors.input.value}</p>\n`);
     DOMSelectors.input.value = ''
 });
 DOMSelectors.remove.addEventListener('click', function() {
-    DOMSelectors.objects.innerHTML.substring(DOMSelectors.objects.innerHTML.indexOf("\n") + 1)
-    console.log(DOMSelectors.objects.innerHTML.split('\n'))
+    newP = DOMSelectors.objects.innerHTML.split('\n')
+    newP.shift()
+    DOMSelectors.objects.innerHTML = newP.join('\n')
 });
