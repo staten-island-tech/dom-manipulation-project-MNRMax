@@ -16,9 +16,13 @@ DOMSelectors.submit.addEventListener('click', function() {
                 <p>${p}</p>
                 <img class="object-image" src="${image}">
                 <br>
-                <button class="remove-button" onclick="this.parentElement.remove()">Remove</button>
+                <button class="remove-button">Remove</button>
         </div>`
     )
+    const buttons = Array.from(document.getElementsByClassName("remove-button"));
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {this.parentElement.remove()})
+    });
     DOMSelectors.nameInput.value = '';
     DOMSelectors.titleInput.value = '';
     DOMSelectors.imageInput.value = '';
