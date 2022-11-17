@@ -1,11 +1,12 @@
 DOMSelectors = {
-    submit: document.getElementById("submit"),
+    form: document.getElementById("form"),
     nameInput: document.getElementById("name-input"),
     titleInput: document.getElementById("title-input"),
     imageInput: document.getElementById("image-input"),
     objects: document.getElementById("objects"),
 }
-DOMSelectors.submit.addEventListener('click', function() {
+DOMSelectors.form.addEventListener('submit', function() {
+    event.preventDefault();
     p = DOMSelectors.nameInput.value;
     h2 = DOMSelectors.titleInput.value;
     image = DOMSelectors.imageInput.value;
