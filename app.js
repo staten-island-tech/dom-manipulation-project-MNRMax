@@ -29,7 +29,7 @@ function addNewElement() {
 }
 
 function setRemoveButtons() {
-    const buttons = Array.from(document.getElementsByClassName("remove-button"));
+    const buttons = document.querySelectorAll(".remove-button");
     buttons.forEach(button => {
         button.addEventListener("click", function() {this.parentElement.remove()})
     });
